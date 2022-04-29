@@ -13,6 +13,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+
         centerTitle: true,
         backgroundColor: Colors.white,
         title: const Text(
@@ -27,7 +28,7 @@ class _HomePageState extends State<HomePage> {
             button(Colors.yellow, 1),
             button(Colors.black, 2),
             button(Colors.amberAccent, 3),
-            button(Colors. greenAccent, 4),
+            button(Colors.greenAccent, 4),
             button(Colors.deepOrange, 5),
             button(Colors.lime, 6),
             button(Colors.deepPurpleAccent, 7),
@@ -41,13 +42,15 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget button(Color color, int number) {
-    return ElevatedButton.icon(
-      style: ElevatedButton.styleFrom(primary: color),
-      onPressed: () {
-        playMusic(1);
-      },
-      icon: Icon(Icons.music_note),
-      label: Text(''),
+    return Expanded(
+      child: ElevatedButton.icon(
+        style: ElevatedButton.styleFrom(primary: color),
+        onPressed: () {
+          playMusic(number);
+        },
+        icon: Icon(Icons.music_note),
+        label: Text(''),
+      ),
     );
   }
 }
